@@ -39,6 +39,16 @@ function show(content) {
         if (content == "/") return;
         if (content == "*") return;
     }
+
+    // 取得最後一個字
+    var last = final[final.length - 1];
+    
+    // 禁止運算符號連續重複
+    // 邏輯運算式 || 或者
+    if (last == "+" || last == "-" || last == "*" || last == "/" )
+        if (content == "+" || content == "-" || content == "*" || content == "/" )
+            return;
+
     // 最終顯示數字累加
     // 輸入數字 += 參數-內容
     final += content;
