@@ -11,6 +11,8 @@ eqialBtn.addEventListener("click",eqial);
 function eqial() {
     // 如果 最終顯示 等於 "空白" 就 跳出return
     if (final == "") return;
+    // 邏輯運算式 || 或者
+    if (last == "+" || last == "-" || last == "*" || last == "/") return;
     // eval 運算字串函數
     result.innerHTML = eval(final);
     // 計算完成後清空
@@ -19,7 +21,6 @@ function eqial() {
     // final = eval(final);
 }
 
-/* 計算機格式 */
 // var 跟 let 功能一樣，但
 // var 在 funtion 使用
 // let 則在 括號內 使用
@@ -55,4 +56,12 @@ function show(content) {
     // 結果元素.內容 = 參數-內容
     result.innerHTML = final;
 }
-/* 計算機格式 */
+
+// 取得清除按鈕
+var clearBtn = document.getElementById("clear");
+clearBtn.addEventListener("click", clear);
+
+function clear() {
+    final = "";
+    result.innerHTML = "0";
+}
