@@ -33,6 +33,8 @@
 }
 
 #caculator #result {
+    /* 將範圍從第一條線取至第五條線*/
+    /* 重要 是以線為基準，非以格為基準*/
     grid-column: 1 / 5;
     padding: 50px;
 }
