@@ -11,4 +11,28 @@
     width: 400px;
     height: 600px;
     margin: 100px auto 0;
+    display: grid;
+    /* 劃分 4 格，每格 1/4。縮寫gtc。 */
+    grid-template-columns: repeat(4 , 1fr);
+    /* 垂直置中 */
+    align-items: center;
+    /* 水平置中 */
+    justify-items: center;
+    /* 另水平置中寫法 text-align: center; */
+    /* 圓角 */
+    border-radius: 10px;
+    /* 陰影 */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3)
+}
+
+#caculator div {
+    /* 可點擊 */
+    cursor: pointer;
+    font-size: 24px;
+    padding: 30px;
+}
+
+#caculator #result {
+    grid-column: 1 / 5;
+    padding: 50px;
 }
