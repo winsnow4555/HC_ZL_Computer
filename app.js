@@ -9,8 +9,14 @@ var eqialBtn = document.getElementById("eqial");
 // 等於按鈕.添加事件監聽器("點擊"，等於)
 eqialBtn.addEventListener("click",eqial);
 function eqial() {
-    // eval 執行計算函數
+    // 如果 最終顯示 等於 "空白" 就 跳出return
+    if (final == "") return;
+    // eval 運算字串函數
     result.innerHTML = eval(final);
+    // 計算完成後清空
+    final = "";
+    // 計算完成後繼續
+    // final = eval(final);
 }
 
 /* 計算機格式 */
@@ -27,6 +33,12 @@ for (let i = 0; i < btns.length; i++) {
 
 // 函式 顯示(參數-內容)
 function show(content) {
+    // 處理尚未輸入數字
+    if (final == "") {
+        if (content == "0") return;
+        if (content == "/") return;
+        if (content == "*") return;
+    }
     // 最終顯示數字累加
     // 輸入數字 += 參數-內容
     final += content;
